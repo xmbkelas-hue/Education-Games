@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mission Exposition: Space Academy</title>
+<style>
+:root{--navy:#071126;--panel:#111f3e;--panel2:#17294d;--cyan:#5ee7ff;--purple:#a78bfa;--gold:#ffd166;--white:#f4f7ff;--muted:#b8c5e2;--green:#61e6a8;--red:#ff7b91}
+*{box-sizing:border-box}body{margin:0;color:var(--white);font-family:Inter,Segoe UI,Arial,sans-serif;background:radial-gradient(ellipse at 15% 15%,#253c79 0,transparent 30%),radial-gradient(ellipse at 85% 5%,#38205f 0,transparent 28%),linear-gradient(145deg,#050a19,#0b1530 55%,#10102a);min-height:100vh;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(2px 2px at 20px 30px,#fff 60%,transparent),radial-gradient(1px 1px at 90px 80px,#a9dfff 60%,transparent),radial-gradient(1.5px 1.5px at 160px 140px,#fff 60%,transparent);background-size:210px 190px;opacity:.55;z-index:-1}
+header{max-width:1100px;margin:auto;padding:28px 22px 10px;display:flex;justify-content:space-between;align-items:center;gap:16px}.brand{display:flex;gap:12px;align-items:center}.logo{width:48px;height:48px;border-radius:15px;background:linear-gradient(135deg,var(--cyan),var(--purple));display:grid;place-items:center;color:#081126;font-size:25px;box-shadow:0 0 28px #5ee7ff55}.eyebrow{font-size:11px;letter-spacing:2.5px;color:var(--cyan);font-weight:800}.brand h1{font-size:18px;margin:4px 0 0}.top-pill{border:1px solid #ffffff2b;background:#ffffff0b;padding:9px 13px;border-radius:999px;color:var(--muted);font-size:12px}
+main{max-width:1100px;margin:0 auto;padding:15px 22px 45px}.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;padding:26px 0 30px}.hero h2{font-size:clamp(32px,5vw,54px);line-height:1.03;margin:10px 0 14px;letter-spacing:-1.7px}.hero h2 span{color:var(--cyan)}.hero p{color:var(--muted);line-height:1.7;max-width:590px}.mission-art{height:235px;position:relative;display:grid;place-items:center}.planet{width:170px;height:170px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#b8f4ff,#5886dc 35%,#45328d 70%,#171b50);box-shadow:inset -22px -18px 30px #050a27,0 0 45px #7b8dff55;position:relative}.planet:after{content:"";position:absolute;width:235px;height:55px;border:8px solid #a78bfa;border-left-color:#c8f7ff;border-bottom-color:#5ee7ff;border-radius:50%;transform:rotate(-22deg);top:55px;left:-34px;opacity:.8}.moon{position:absolute;right:15%;top:22px;width:36px;height:36px;background:#ffdca8;border-radius:50%;box-shadow:0 0 25px #ffd16677}.satellite{position:absolute;left:12%;bottom:28px;font-size:28px;transform:rotate(-25deg)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:8px 0 25px}.stat{background:#ffffff09;border:1px solid #ffffff18;padding:14px 16px;border-radius:16px}.stat strong{display:block;color:var(--cyan);font-size:20px}.stat span{font-size:12px;color:var(--muted)}
+.layout{display:grid;grid-template-columns:280px 1fr;gap:18px;align-items:start}.side,.game{border:1px solid #ffffff20;background:linear-gradient(145deg,#132342eF,#0d1832f2);border-radius:22px;box-shadow:0 20px 60px #0003}.side{padding:20px;position:sticky;top:14px}.side h3{font-size:14px;margin:0 0 14px}.step{display:flex;gap:11px;align-items:center;padding:11px 10px;border-radius:12px;color:var(--muted);font-size:13px;margin:5px 0}.step b{display:grid;place-items:center;width:28px;height:28px;border-radius:9px;background:#ffffff12;color:var(--white);font-size:12px}.step.active{background:#5ee7ff16;color:var(--white);border:1px solid #5ee7ff44}.step.active b{background:var(--cyan);color:#081126}.side-note{margin-top:18px;padding:14px;border-radius:14px;background:#a78bfa12;border:1px solid #a78bfa33;color:#d8d0ff;font-size:12px;line-height:1.6}.game{padding:clamp(18px,3vw,30px);min-height:470px}.screen{display:none}.screen.active{display:block}.section-tag{display:inline-flex;align-items:center;gap:7px;color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:1.7px;text-transform:uppercase}.game h3{font-size:24px;margin:12px 0 10px}.game p{color:var(--muted);line-height:1.65}.primary,.secondary{border:0;border-radius:12px;padding:13px 18px;font-weight:800;cursor:pointer;transition:.2s;font-size:14px}.primary{background:linear-gradient(100deg,var(--cyan),#9af3e3);color:#071126;box-shadow:0 7px 24px #5ee7ff22}.primary:hover{transform:translateY(-2px);filter:brightness(1.05)}.secondary{background:#ffffff10;border:1px solid #ffffff25;color:var(--white)}button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}.button-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.text-card{background:#081329aa;border:1px solid #ffffff1c;border-radius:16px;padding:18px;margin:17px 0}.text-card h4{margin:0 0 8px;color:var(--gold);font-size:15px}.text-card p{color:#e3eaff;margin:0;line-height:1.8;font-size:14px}.text-card p+p{margin-top:10px}.chip{display:inline-block;border:1px solid #5ee7ff55;background:#5ee7ff10;color:var(--cyan);padding:5px 9px;border-radius:999px;font-size:11px;font-weight:700;margin:0 5px 5px 0}.progress-head{display:flex;justify-content:space-between;gap:12px;align-items:center;color:var(--muted);font-size:12px}.progress{height:7px;background:#ffffff14;border-radius:20px;overflow:hidden;margin:10px 0 20px}.progress div{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--purple));transition:width .3s}.question{font-size:19px;line-height:1.5;color:var(--white);font-weight:750;margin:18px 0}.options{display:grid;gap:10px}.option{display:flex;align-items:flex-start;gap:12px;text-align:left;width:100%;padding:14px;border:1px solid #ffffff20;background:#ffffff07;color:var(--white);border-radius:13px;cursor:pointer;line-height:1.5}.option:hover{border-color:#5ee7ff88;background:#5ee7ff0b}.option .letter{flex:0 0 27px;height:27px;display:grid;place-items:center;border-radius:8px;background:#ffffff12;font-weight:800;color:var(--cyan);font-size:12px}.option.selected{border-color:var(--cyan);background:#5ee7ff16}.option.correct{border-color:var(--green);background:#61e6a815}.option.wrong{border-color:var(--red);background:#ff7b9112}.feedback{padding:13px 15px;margin-top:14px;border-radius:12px;line-height:1.6;font-size:13px;display:none}.feedback.show{display:block}.feedback.good{background:#61e6a812;border:1px solid #61e6a855;color:#baffdc}.feedback.bad{background:#ff7b9112;border:1px solid #ff7b9155;color:#ffd1d9}.question-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:18px}.small{font-size:12px;color:var(--muted)}.result{text-align:center;padding:15px 0}.score-ring{width:130px;height:130px;margin:18px auto;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,#101d3b 57%,transparent 59%),conic-gradient(var(--cyan) var(--score,0%),#ffffff18 0);box-shadow:0 0 30px #5ee7ff1c}.score-ring strong{font-size:32px}.review{margin-top:20px;text-align:left}.review-item{padding:12px 14px;border-bottom:1px solid #ffffff14;font-size:13px;line-height:1.6}.review-item strong{color:var(--gold)}.footer{text-align:center;color:#8b9abb;font-size:11px;margin:24px 0 0}.hidden{display:none!important}
+@media(max-width:780px){.hero{grid-template-columns:1fr;padding-top:12px}.mission-art{height:170px}.planet{width:125px;height:125px}.planet:after{width:175px;height:42px;top:40px;left:-25px;border-width:6px}.layout{grid-template-columns:1fr}.side{position:static}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}.step{padding:8px 6px;font-size:11px;display:block;text-align:center}.step b{margin:0 auto 5px}.side-note{display:none}.stats{gap:7px}.stat{padding:12px 10px}.stat strong{font-size:17px}.stat span{font-size:10px}header{padding-top:18px}.top-pill{display:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand"><div class="logo">✦</div><div><div class="eyebrow">SPACE ACADEMY • ENGLISH XII</div><h1>Mission Exposition</h1></div></div>
+  <div class="top-pill">🚀 TKA Practice Simulator</div>
+</header>
+<main>
+  <section class="hero">
+    <div><div class="eyebrow">YOUR NEXT MISSION STARTS HERE</div><h2>Think sharp.<br><span>Write the future.</span></h2><p>Jelajahi teks hortatory exposition, temukan thesis, arguments, dan recommendation, lalu selesaikan tantangan bergaya TKA untuk naik level sebagai Space Analyst.</p></div>
+    <div class="mission-art" aria-hidden="true"><div class="moon"></div><div class="planet"></div><div class="satellite">🛰️</div></div>
+  </section>
+  <div class="stats">
+    <div class="stat"><strong>01–10</strong><span>Mission questions</span></div><div class="stat"><strong>3 Skills</strong><span>Thesis • Arguments • Recommendation</span></div><div class="stat"><strong>⭐ XP</strong><span>Earn your mission rank</span></div>
+  </div>
+  <section class="layout">
+    <aside class="side">
+      <h3>MISSION CONTROL</h3>
+      <div class="steps">
+        <div class="step active" id="step0"><b>01</b> Briefing</div>
+        <div class="step" id="step1"><b>02</b> Read & Analyze</div>
+        <div class="step" id="step2"><b>03</b> TKA Challenge</div>
+      </div>
+      <div class="side-note"><strong>🎯 Learning objectives</strong><br>By the end of this mission, you can identify and analyze the thesis, supporting arguments, and recommendation in a hortatory exposition text.</div>
+    </aside>
+    <section class="game">
+      <div class="screen active" id="briefing">
+        <span class="section-tag">✦ Mission briefing</span><h3>Welcome, Space Analyst!</h3>
+        <p>Your mission is to decode a persuasive text and decide how its ideas are organized. Read carefully: the questions test meaning, purpose, inference, and text structure—similar to TKA-style reading tasks.</p>
+        <div class="text-card"><h4>📡 Your mission protocol</h4><p><b>THESIS</b> — the writer's position or main claim.<br><b>ARGUMENTS</b> — reasons and evidence supporting the position.<br><b>RECOMMENDATION</b> — the action the writer urges readers to take.</p></div>
+        <p><span class="chip">10 questions</span><span class="chip">Multiple choice</span><span class="chip">Instant feedback</span><span class="chip">Final score & review</span></p>
+        <div class="button-row"><button class="primary" onclick="startReading()">Launch Mission →</button></div>
+      </div>
+      <div class="screen" id="reading">
+        <span class="section-tag">✦ Mission 01 • Decode the text</span><h3>Should Schools Limit Smartphone Use?</h3>
+        <p>Read the passage. Pay attention to the writer's position, reasons, and suggested action.</p>
+        <div class="text-card">
+          <h4>Should Schools Limit Smartphone Use?</h4>
+          <p><b>[1]</b> Schools should limit students' smartphone use during learning hours. Although smartphones can provide quick access to information, unrestricted use often distracts students from lessons and reduces meaningful interaction in the classroom.</p>
+          <p><b>[2]</b> First, notifications and social media can interrupt students' concentration. Even a short distraction may make it difficult to follow an explanation or complete a complex task. As a result, students may miss important information.</p>
+          <p><b>[3]</b> Second, excessive phone use can reduce face-to-face communication. Classroom discussions help students explain their ideas, listen to different opinions, and develop social skills. If students focus on their screens, these opportunities may be lost.</p>
+          <p><b>[4]</b> However, banning phones completely is not always necessary. Teachers can allow them for specific learning activities, such as checking reliable sources or using educational applications, when the purpose is clear.</p>
+          <p><b>[5]</b> Therefore, schools should establish clear smartphone rules: phones should be kept away during explanations and discussions, but may be used when teachers explicitly include them in a learning task. This balanced policy can protect students' focus while preserving technology's educational benefits.</p>
+        </div>
+        <div class="text-card"><h4>🔎 Analyst's quick guide</h4><p>Paragraph 1 introduces the writer's position. Paragraphs 2–4 develop reasons and qualification. Paragraph 5 proposes what schools should do.</p></div>
+        <div class="button-row"><button class="primary" onclick="startQuiz()">I’m ready for the TKA challenge →</button><button class="secondary" onclick="showScreen('briefing',0)">Back</button></div>
+      </div>
+      <div class="screen" id="quiz">
+        <div class="progress-head"><span id="q-label">QUESTION 1 OF 10</span><span id="xp-label">⭐ 0 XP</span></div>
+        <div class="progress"><div id="progress-bar"></div></div>
+        <span class="section-tag">✦ Mission 02 • TKA challenge</span>
+        <div id="q-type" class="small" style="margin-top:12px"></div>
+        <div class="question" id="question-text"></div>
+        <div class="options" id="options"></div>
+        <div class="feedback" id="feedback" aria-live="polite"></div>
+        <div class="question-footer"><span class="small" id="answered-label">Choose the best answer.</span><button class="primary" id="next-btn" onclick="nextQuestion()" disabled>Submit answer →</button></div>
+      </div>
+      <div class="screen" id="results">
+        <div class="result"><span class="section-tag">✦ Mission report</span><h3 id="result-title">Mission complete!</h3><p id="result-subtitle">Your analysis has been recorded.</p><div class="score-ring" id="score-ring"><strong id="score-number">0/10</strong></div><h3 id="rank">Cadet Analyst</h3><p id="rank-message"></p><div class="button-row" style="justify-content:center"><button class="primary" onclick="restart()">Replay mission ↻</button><button class="secondary" onclick="showReview()">Review answers</button></div></div>
+        <div class="review hidden" id="review"></div>
+      </div>
+    </section>
+  </section>
+  <div class="footer">MISSION EXPOSITION • Grade XII English • Designed for classroom practice</div>
+</main>
+<script>
+const questions = [
+ {type:"Text structure • Thesis",q:"Which statement best expresses the writer's thesis?",opts:["Smartphones should be completely banned in every situation.","Schools should limit smartphone use during learning hours.","Students should use social media to improve classroom communication.","Teachers should replace classroom discussions with educational apps."],a:1,exp:"The thesis is the writer's central position. Paragraph 1 clearly states that schools should limit smartphone use during learning hours."},
+ {type:"Text structure • Argument",q:"Which point is used as an argument to support the writer's position?",opts:["Smartphones are always more reliable than books.","Students prefer studying alone rather than in groups.","Notifications can interrupt concentration and cause students to miss information.","Every school already has the same smartphone policy."],a:2,exp:"Paragraph 2 provides a supporting reason: notifications and social media interrupt concentration and may cause students to miss important information."},
+ {type:"Purpose • Recommendation",q:"What action does the writer recommend in the final paragraph?",opts:["Allow students to use phones whenever they want.","Remove all technology from schools.","Let students decide their own classroom rules.","Create clear rules that restrict phones but allow purposeful learning use."],a:3,exp:"The recommendation is a balanced policy: phones are put away during explanations and discussions but can be used when the teacher assigns a learning task."},
+ {type:"Inference • Arguments",q:"What can be inferred from paragraph 4?",opts:["The writer believes smartphones have no educational value.","Smartphones can support learning when their use is planned and purposeful.","Teachers should avoid all digital learning activities.","Students learn best when they never use technology."],a:1,exp:"The writer acknowledges that phones can help with reliable research and educational apps, so the argument is against unrestricted use, not all use."},
+ {type:"Main idea • Paragraph function",q:"What is the main function of paragraph 3?",opts:["To introduce the topic for the first time.","To give a counterargument about school rules.","To explain another reason for limiting smartphone use.","To summarize the writer's recommendation."],a:2,exp:"Paragraph 3 develops the second argument: excessive phone use may reduce face-to-face communication and opportunities to develop social skills."},
+ {type:"Evaluation • Evidence",q:"Which additional evidence would most strongly support the argument in paragraph 2?",opts:["A survey showing students' favorite smartphone brands.","A school's record comparing task completion or attention with and without phone interruptions.","An advertisement for a new smartphone.","A list of popular social media platforms."],a:1,exp:"Evidence comparing attention or task completion under different conditions directly supports the claim that phone interruptions can affect concentration."},
+ {type:"Text structure • Distinguishing roles",q:"Which option correctly classifies the following ideas? (1) Phones can interrupt concentration. (2) Schools should limit phone use. (3) Schools should create clear rules.",opts:["(1) thesis, (2) recommendation, (3) argument","(1) recommendation, (2) argument, (3) thesis","(1) argument, (2) thesis, (3) recommendation","(1) argument, (2) recommendation, (3) thesis"],a:2,exp:"The distraction claim is a supporting argument; the position that schools should limit use is the thesis; the specific action of creating clear rules is the recommendation."},
+ {type:"Vocabulary in context",q:"The word “unrestricted” in paragraph 1 is closest in meaning to …",opts:["carefully monitored","not limited or controlled","used for academic purposes","temporarily unavailable"],a:1,exp:"“Unrestricted” means without limits or controls, which describes the phone use the writer argues against."},
+ {type:"Logical relationship",q:"Why does the writer use the word “However” at the beginning of paragraph 4?",opts:["To introduce a contrasting qualification to the arguments for limiting phones.","To repeat the thesis using different words.","To present the final recommendation.","To show that classroom discussion is unnecessary."],a:0,exp:"“However” signals a contrast: although phone use has drawbacks, a complete ban may not be necessary because phones can be useful for planned learning activities."},
+ {type:"Best conclusion • TKA-style evaluation",q:"Which statement best reflects the overall message of the text?",opts:["Smartphones should be the center of every classroom activity.","Smartphones always harm students, so schools must ban them completely.","Students should be trusted to use phones without guidance.","Schools should balance students' focus with the educational benefits of technology."],a:3,exp:"The text argues for a balanced policy that reduces distraction while preserving purposeful educational use."}
+];
+let current=0, score=0, chosen=null, locked=false, answers=[];
+function showScreen(id,step){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));if(step!==undefined&&document.getElementById('step'+step))document.getElementById('step'+step).classList.add('active');}
+function startReading(){showScreen('reading',1)}
+function startQuiz(){current=0;score=0;chosen=null;locked=false;answers=[];showScreen('quiz',2);renderQuestion()}
+function renderQuestion(){
+ const q=questions[current];chosen=null;locked=false;
+ document.getElementById('q-label').textContent=`QUESTION ${current+1} OF ${questions.length}`;
+ document.getElementById('xp-label').textContent=`⭐ ${score*10} XP`;
+ document.getElementById('progress-bar').style.width=`${current/questions.length*100}%`;
+ document.getElementById('q-type').textContent=q.type;
+ document.getElementById('question-text').textContent=q.q;
+ document.getElementById('answered-label').textContent='Choose the best answer.';
+ const fb=document.getElementById('feedback');fb.className='feedback';fb.textContent='';
+ const ob=document.getElementById('options');ob.innerHTML='';
+ q.opts.forEach((opt,i)=>{const b=document.createElement('button');b.className='option';b.innerHTML=`<span class="letter">${String.fromCharCode(65+i)}</span><span>${opt}</span>`;b.onclick=()=>selectOption(i);ob.appendChild(b)});
+ const next=document.getElementById('next-btn');next.disabled=true;next.textContent='Submit answer →';
+}
+function selectOption(i){if(locked)return;chosen=i;document.querySelectorAll('.option').forEach((el,j)=>el.classList.toggle('selected',i===j));document.getElementById('next-btn').disabled=false;document.getElementById('answered-label').textContent='Answer selected.'}
+function nextQuestion(){
+ if(!locked){if(chosen===null)return;locked=true;const q=questions[current];const correct=chosen===q.a;if(correct)score++;answers.push({chosen,correct});document.querySelectorAll('.option').forEach((el,j)=>{el.disabled=true;if(j===q.a)el.classList.add('correct');if(j===chosen&&!correct)el.classList.add('wrong')});const fb=document.getElementById('feedback');fb.className='feedback show '+(correct?'good':'bad');fb.innerHTML=`<strong>${correct?'✓ Correct! +10 XP':'✕ Not quite.'}</strong> ${q.exp}`;document.getElementById('xp-label').textContent=`⭐ ${score*10} XP`;document.getElementById('progress-bar').style.width=`${(current+1)/questions.length*100}%`;document.getElementById('answered-label').textContent=correct?'Signal decoded!':'Review the explanation above.';document.getElementById('next-btn').textContent=current===questions.length-1?'View mission report →':'Next question →';return}
+ if(current<questions.length-1){current++;renderQuestion()}else showResults()
+}
+function showResults(){showScreen('results',2);document.getElementById('progress-bar').style.width='100%';document.getElementById('score-number').textContent=`${score}/10`;document.getElementById('score-ring').style.setProperty('--score',`${score*10}%`);let rank,msg;if(score>=9){rank='🚀 Commander of Rhetoric';msg='Outstanding! You can distinguish the writer’s position, supporting logic, and recommended action with confidence.'}else if(score>=7){rank='🪐 Senior Space Analyst';msg='Great work! You understand the text structure. Review the missed items to sharpen your analysis.'}else if(score>=5){rank='🌙 Junior Space Analyst';msg='Good start. Revisit the difference between the writer’s main position, supporting reasons, and proposed action.'}else{rank='⭐ Cadet Analyst';msg='Keep training! Read each paragraph again and ask: Is it the main claim, a reason, or an action the writer wants readers to take?'}document.getElementById('rank').textContent=rank;document.getElementById('rank-message').textContent=msg;document.getElementById('result-title').textContent=score>=7?'Mission accomplished!':'Mission logged!';document.getElementById('result-subtitle').textContent=`You earned ${score*10} XP out of 100 possible XP.`;document.getElementById('review').classList.add('hidden')}
+function showReview(){const r=document.getElementById('review');r.classList.toggle('hidden');if(!r.classList.contains('hidden')){r.innerHTML='<h3>Answer review</h3>'+questions.map((q,i)=>`<div class="review-item"><strong>${i+1}. ${q.type}</strong><br>${q.q}<br><span style="color:${answers[i].correct?'#61e6a8':'#ff9aaa'}">Your answer: ${String.fromCharCode(65+answers[i].chosen)}. ${q.opts[answers[i].chosen]} ${answers[i].correct?'✓':'✕'}</span><br><span style="color:#b8c5e2">Correct answer: ${String.fromCharCode(65+q.a)}. ${q.opts[q.a]}</span><br>${q.exp}</div>`).join('')}}
+function restart(){showScreen('briefing',0);document.getElementById('review').classList.add('hidden')}
+</script>
+</body>
+</html>
